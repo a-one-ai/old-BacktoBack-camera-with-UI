@@ -1,0 +1,42 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+</head>
+<body>
+
+    <h1>Image Gallery</h1>
+
+    <!-- Button to trigger the background function -->
+    <button onclick="triggerBackgroundFunction()">Trigger Background Function</button>
+
+    <!-- Display images using an img tag -->
+    {% for image in images %}
+        <img src="data:image/jpeg;{{ image}}" alt="Image">
+    {% endfor %}
+
+    <!-- Include jQuery library for AJAX -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        // Function to trigger the background function using AJAX
+        function triggerBackgroundFunction() {
+            $.ajax({
+                type: 'GET',
+                url: '/background_function',
+                success: function(response) {
+                    console.log(response);  // Log the response from the background function
+                },
+                error: function(error) {
+                    console.error('Error triggering background function:', error);
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

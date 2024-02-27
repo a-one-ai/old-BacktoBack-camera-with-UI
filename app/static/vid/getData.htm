@@ -1,0 +1,124 @@
+
+<!-- saved from url=(0029)http://127.0.0.1:3000/getData -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Arial', sans-serif; /* Change the font family */
+    }
+
+    video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; 
+    }
+
+    .container {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 20px;
+        width: 400px;
+        margin: 100px auto; /* Adjust margin for centering the form */
+        text-align: center; /* Center-align the content */
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid #fff;
+        background-color: transparent;
+        color: #ffffff;
+        margin-bottom: 10px;
+        font-size: 16px; 
+        font-family: 'Arial', sans-serif; 
+    }
+
+    .error-message {
+        color: rgb(255, 255, 255);
+        margin-top: 5px;
+        font-size: 14px; /* Adjust error message font size */
+    }
+
+    .btn {
+        background-color: #274c03;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px; /* Increase button font size */
+    }
+
+    #img1{
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+</style>
+
+</head><body><video autoplay="" loop="" muted="">
+    <source src="/static/vid/background.mp4">
+</video>
+
+<div class="container">
+    <!-- <img src="/static/img/logo.png" id = 'img1' alt="logo"> -->
+    <form action="http://127.0.0.1:3000/getData" method="post">
+        <input id="csrf_token" name="csrf_token" type="hidden" value="IjFlNjg1OWVhMmVjOWM5NWU3OTNiOTFmZTcxM2Q4NDE5MjQ5OThhNzki.ZbWDrg.P1VZfzwryAWoaPbnitGUE5dMTeg">
+        
+        
+    <div class="form-group">
+        <label for="cameraName">CameraName</label>
+        <input class="form-control" id="cameraName" name="cameraName" required="" type="text" value="">
+        
+    </div>
+
+        
+    <div class="form-group">
+        <label for="sourceType">SourceType</label>
+        <select class="form-control" id="sourceType" name="sourceType" required=""><option value=""></option><option value="WEBCAM">WEBCAM</option><option value="RTSP">RTSP</option><option value="URL">URL</option></select>
+        
+    </div>
+
+        
+    <div class="form-group">
+        <label for="source">Source</label>
+        <input class="form-control" id="source" name="source" required="" type="text" value="">
+        
+    </div>
+
+        
+    <div class="form-group">
+        <label for="Model">Model</label>
+        <select class="form-control" id="Model" name="Model" required=""><option value=""></option><option value="violence">violence</option><option value="vehicle">vehicle</option><option value="crowdedDensity">crowdedDensity</option><option value="crossingBorder">crossingBorder</option><option value="crowded">crowded</option></select>
+        
+    </div>
+
+        <input type="submit" value="Start" class="btn btn-primary">
+        <input id="csrf_token" name="csrf_token" type="hidden" value="IjFlNjg1OWVhMmVjOWM5NWU3OTNiOTFmZTcxM2Q4NDE5MjQ5OThhNzki.ZbWDrg.P1VZfzwryAWoaPbnitGUE5dMTeg">
+    </form>
+</div>
+
+</body></html>

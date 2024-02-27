@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Reset Code</title>
+</head>
+<body>
+    <h2>Confirm Reset Code</h2>
+    
+    <form action="{{ url_for('confirm_reset_code') }}" method="POST">
+        {{ form.csrf_token }}
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="code">Reset Code:</label><br>
+        <input type="text" id="code" name="code" required><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
